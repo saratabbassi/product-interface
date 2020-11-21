@@ -1,0 +1,117 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
+import java.awt.FlowLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JSplitPane;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.Dimension;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JToggleButton;
+import javax.swing.JComboBox;
+import javax.swing.JSpinner;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSlider;
+import javax.swing.JSeparator;
+import javax.swing.JProgressBar;
+import javax.swing.JMenu;
+import java.awt.Panel;
+import java.awt.ScrollPane;
+import java.awt.TextArea;
+import javax.swing.JTextPane;
+import javax.swing.DropMode;
+import java.awt.Font;
+import java.awt.Label;
+import java.awt.Button;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.BoxLayout;
+
+public class Fenetre {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Fenetre window = new Fenetre();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Fenetre() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.BLACK);
+		frame.setBounds(100, 100, 800, 521);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		Panel panel = new Panel();
+		panel.setBackground(Color.LIGHT_GRAY);
+		panel.setBounds(30, 10, 345, 201);
+		frame.getContentPane().add(panel);
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		
+		JTextPane txtpnMatricule = new JTextPane();
+		txtpnMatricule.setFont(new Font("Tahoma", Font.BOLD, 15));
+		txtpnMatricule.setBackground(Color.LIGHT_GRAY);
+		txtpnMatricule.setText("matricule");
+		panel.add(txtpnMatricule);
+		
+		Button button = new Button("Ajouter ");
+		panel.add(button);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button.setBackground(Color.BLUE);
+		button.setFont(new Font("Dialog", Font.BOLD, 15));
+		
+		Panel panel_1 = new Panel();
+		panel_1.setBackground(Color.LIGHT_GRAY);
+		panel_1.setBounds(390, 10, 354, 201);
+		frame.getContentPane().add(panel_1);
+		
+		Panel panel_2 = new Panel();
+		panel_2.setBackground(Color.LIGHT_GRAY);
+		panel_2.setBounds(30, 228, 345, 125);
+		frame.getContentPane().add(panel_2);
+		
+		Panel panel_3 = new Panel();
+		panel_3.setBackground(Color.LIGHT_GRAY);
+		panel_3.setBounds(390, 237, 354, 116);
+		frame.getContentPane().add(panel_3);
+		
+		Panel panel_4 = new Panel();
+		panel_4.setBackground(Color.LIGHT_GRAY);
+		panel_4.setBounds(186, 359, 558, 100);
+		frame.getContentPane().add(panel_4);
+	}
+}

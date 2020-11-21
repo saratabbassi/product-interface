@@ -1,0 +1,129 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
+import java.awt.FlowLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JSplitPane;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.Dimension;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JToggleButton;
+import javax.swing.JComboBox;
+import javax.swing.JSpinner;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSlider;
+import javax.swing.JSeparator;
+import javax.swing.JProgressBar;
+import javax.swing.JMenu;
+import java.awt.Panel;
+import java.awt.ScrollPane;
+import java.awt.TextArea;
+import javax.swing.JTextPane;
+import javax.swing.DropMode;
+import java.awt.Font;
+import java.awt.Label;
+import java.awt.Button;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.BoxLayout;
+import javax.swing.SpringLayout;
+import javax.swing.JButton;
+
+public class Fenetre {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Fenetre window = new Fenetre();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Fenetre() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.BLACK);
+		frame.setBounds(100, 100, 800, 521);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		Panel panel = new Panel();
+		panel.setBackground(Color.LIGHT_GRAY);
+		panel.setBounds(30, 10, 345, 201);
+		frame.getContentPane().add(panel);
+		GridBagLayout gbl_panel = new GridBagLayout();
+		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
+		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
+		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		panel.setLayout(gbl_panel);
+		
+		JButton btnNewButton = new JButton("AJOUTER");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setForeground(Color.BLUE);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+		gbc_btnNewButton.gridx = 4;
+		gbc_btnNewButton.gridy = 5;
+		panel.add(btnNewButton, gbc_btnNewButton);
+		
+		Panel panel_1 = new Panel();
+		panel_1.setBackground(Color.LIGHT_GRAY);
+		panel_1.setBounds(390, 10, 354, 201);
+		frame.getContentPane().add(panel_1);
+		
+		Panel panel_2 = new Panel();
+		panel_2.setBackground(Color.LIGHT_GRAY);
+		panel_2.setBounds(30, 228, 345, 125);
+		frame.getContentPane().add(panel_2);
+		GridBagLayout gbl_panel_2 = new GridBagLayout();
+		gbl_panel_2.columnWidths = new int[]{0};
+		gbl_panel_2.rowHeights = new int[]{0};
+		gbl_panel_2.columnWeights = new double[]{Double.MIN_VALUE};
+		gbl_panel_2.rowWeights = new double[]{Double.MIN_VALUE};
+		panel_2.setLayout(gbl_panel_2);
+		
+		
+		Panel panel_3 = new Panel();
+		panel_3.setBackground(Color.LIGHT_GRAY);
+		panel_3.setBounds(390, 237, 354, 116);
+		frame.getContentPane().add(panel_3);
+		
+		Panel panel_4 = new Panel();
+		panel_4.setBackground(Color.LIGHT_GRAY);
+		panel_4.setBounds(186, 359, 558, 100);
+		frame.getContentPane().add(panel_4);
+	}
+}
